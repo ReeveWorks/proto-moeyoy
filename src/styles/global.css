@@ -1,0 +1,44 @@
+/* Dark Mode */
+:root, html.dark {
+  --text: rgba(255, 255, 255, 0.87);
+  --background-main: rgb(36, 36, 36);
+  --background-secondary: rgb(48, 48, 48);
+  --accent: rgb(116, 123, 255);
+}
+
+/* Light Mode */
+html.light {
+  --text: rgba(0, 0, 0, 0.87);
+  --background-main: rgb(255, 239, 204);
+  --background-secondary: rgb(192, 167, 138);
+  --accent: rgb(158, 116, 255);
+}
+
+/* Global Styles */
+:root {
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive ;
+  line-height: 1;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--background-main);
+
+  text-align: center;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    font-size: 1rem;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive ;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    background-color: var(--background-secondary);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
