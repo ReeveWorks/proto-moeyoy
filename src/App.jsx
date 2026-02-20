@@ -1,32 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useSelector, useDispatch} from 'react-redux'
+import { togglemode } from './states/darkmode/darkmodeSlice'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const darkmode = useSelector((state) => state.darkmode.darkmode);
+  const dispatch = useDispatch();
+
+  function toggleDarkmode() {
+    dispatch(togglemode(!darkmode.isDarkmode));
+  }
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img className="clickable" src={darkmode.imageSource} alt="Dark Mode" onClick={() => toggleDarkmode()} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </button>
-        <p>
-          Edit src/App.jsx and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>Dark Mode is <b>{darkmode.isDarkmode ? "Enabled" : "Disabled"}</b></p>
     </>
   )
 }
