@@ -1,27 +1,30 @@
 /* Dark Mode */
-:root, html.dark {
-  --text: rgba(255, 255, 255, 0.87);
-  --background-main: rgb(36, 36, 36);
-  --background-secondary: rgb(48, 48, 48);
+:root,
+html.dark {
+  --text-main: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgb(50, 37, 97);
+  --background-main: rgb(32, 35, 49);
+  --background-secondary: rgb(221, 214, 255);
   --accent: rgb(116, 123, 255);
 }
 
 /* Light Mode */
 html.light {
-  --text: rgba(56, 26, 1, 0.87);
+  --text-main: rgba(56, 26, 1, 0.87);
+  --text-secondary: rgba(255, 239, 204);
   --background-main: rgb(255, 239, 204);
-  --background-secondary: rgb(192, 167, 138);
+  --background-secondary: rgba(73, 34, 2, 0.87);
   --accent: rgb(158, 116, 255);
 }
 
 /* Global Styles */
 :root {
-  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive ;
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
   line-height: 1;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--text);
+  color: var(--text-main);
   background-color: var(--background-main);
 
   text-align: center;
@@ -32,18 +35,21 @@ html.light {
 }
 
 button {
-    font-size: 1rem;
-    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive ;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.25em;
-    background-color: var(--background-secondary);
-    color: white;
-    cursor: pointer;
-    transition: background-color 300ms;
+  font-size: 1rem;
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  padding: 0.5em 1em;
+
+  border: none;
+  border-radius: 0.25em;
+
+  background-color: var(--background-secondary);
+
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 300ms;
 }
 
 .clickable {
-    cursor: pointer;
-    width: 100px;
+  cursor: pointer;
+  width: 100px;
 }
